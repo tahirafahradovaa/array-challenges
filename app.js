@@ -54,3 +54,48 @@ function generate(start, count) {
   }
   return numArr;
 }
+
+const priArr = [1, 2, 3, 5, 7, 11];
+const nonPri = [1, 2, 3, 4, 5, 6];
+
+function primitive(arr) {
+  let nonPrimitive = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 2 && arr[i] % 2 === 0) {
+      nonPrimitive.push(arr[i]);
+    } else if (arr[i] > 3 && arr[i] % 3 === 0) {
+      nonPrimitive.push(arr[i]);
+    }
+  }
+  if (nonPrimitive.length !== 0) {
+    return false;
+  } else if (nonPrimitive.length === 0) {
+    return true;
+  }
+}
+let nese = [1, 1, 1, 2, 3, 4];
+let nese2 = [4, 3, 100, 200, 200];
+function findUnique(arr) {
+  let newArr = arr.filter((item, i, ar) => ar.indexOf(item) === i);
+  return newArr;
+}
+
+function sorted(arr1, arr2) {
+  let combine = [...arr1, ...arr2];
+  let newArr = combine.filter((item, i, ar) => ar.indexOf(item) === i);
+
+  console.log(newArr);
+}
+
+//
+
+// function shuffleArray(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     const temp = array[i];
+//     array[i] = array[j];
+//     array[j] = temp;
+//   }
+//   return array;
+// }
+// console.log(shuffle(nese));
