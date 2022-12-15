@@ -99,3 +99,9 @@ function sorted(arr1, arr2) {
 //   return array;
 // }
 // console.log(shuffle(nese));
+function findDiff(arr1, arr2) {
+  let difference = arr1.filter((x) => arr2.includes(x));
+  return difference;
+}
+
+console.log(findDiff(nese, nese2));
