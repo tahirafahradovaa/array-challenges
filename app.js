@@ -73,7 +73,7 @@ function primitive(arr) {
     return true;
   }
 }
-let nese = [1, 1, 1, 2, 3, 4];
+let nese = [1, 9, 8, 2, 3, 4];
 let nese2 = [4, 3, 100, 200, 200];
 function findUnique(arr) {
   let newArr = arr.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -84,24 +84,21 @@ function sorted(arr1, arr2) {
   let combine = [...arr1, ...arr2];
   let newArr = combine.filter((item, i, ar) => ar.indexOf(item) === i);
 
-  console.log(newArr);
+  return newArr;
 }
 
-//
-
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     const temp = array[i];
-//     array[i] = array[j];
-//     array[j] = temp;
-//   }
-//   return array;
-// }
-// console.log(shuffle(nese));
 function findDiff(arr1, arr2) {
   let difference = arr1.filter((x) => arr2.includes(x));
   return difference;
 }
 
-console.log(findDiff(nese, nese2));
+// console.log(findDiff(nese, nese2));
+function shuffleArr(arr) {
+  let newArr = [];
+  for (let nums of arr) {
+    const randNum = Math.floor(Math.random() * arr.length);
+    newArr.splice(randNum, 0, nums);
+  }
+  console.log(newArr);
+}
+shuffleArr(nese);
